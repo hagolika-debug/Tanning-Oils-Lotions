@@ -1,11 +1,11 @@
-name: Run pin.py every 3 days
+name: Run pin.py every 5 days
 
 permissions:
   contents: write
 
 on:
   schedule:
-    - cron: "0 0 */5 * *"  # every 3 days at midnight UTC  workflow_dispatch:
+    - cron: "0 0 */5 * *"  # every 5 days at midnight UTC  workflow_dispatch:
 
 jobs:
   run-pin-windows:
