@@ -5,8 +5,7 @@ permissions:
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # every day at 00:00 UTC
-  workflow_dispatch:
+    - cron: "0 0 */5 * *"  # every 3 days at midnight UTC  workflow_dispatch:
 
 jobs:
   run-pin-windows:
