@@ -31,21 +31,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Download Affiliate.zip from Google Drive
+      - name: Download AffiliateTanningOil.zip from Google Drive
         shell: powershell
         run: |
           $url = '${{ secrets.GDRIVE_PIN_URL }}'
-          $output = 'Affiliate.zip'
+          $output = 'AffiliateTanningOil.zip'
           Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing
           if (-not (Test-Path $output)) {
             throw "Download failed: $output not found."
           }
 
-      - name: Unzip Affiliate.zip
+      - name: Unzip AffiliateTanningOil.zip
         shell: powershell
         run: |
-          Expand-Archive -Path Affiliate.zip -DestinationPath . -Force
-          Remove-Item Affiliate.zip
+          Expand-Archive -Path AffiliateTanningOil.zip -DestinationPath . -Force
+          Remove-Item AffiliateTanningOil.zip
 
       - name: Install Python dependencies
         run: |
